@@ -10,6 +10,12 @@ const Header = () => {
   const scheduleButton = 'Start Scheduling'
   const demo = 'View Demo'
 
+  const getName = () => {
+    const navLinks = document.getElementsByTagName('a')
+    for (let i = 0; i < navLinks.length; i++) {
+      let eachLink = navLinks[i]
+    }
+  }
   return (
     <header className='header'>
       <div>
