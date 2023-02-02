@@ -10,38 +10,33 @@ const Header = () => {
   const scheduleButton = 'Start Scheduling'
   const demo = 'View Demo'
 
-  const getName = () => {
-    const navLinks = document.getElementsByTagName('a')
+  const paintNavLink = () => {
+    const navLinks = Header.getElementsByTagName('a')
     for (let i = 0; i < navLinks.length; i++) {
       let eachLink = navLinks[i]
+      eachLink.addEventListener('click', () => {
+        eachLink.classList.toggle('active')
+        if (eachLink.classList.contains('active')) {
+          eachLink.style.color = 'darkblue'
+        } else eachLink.classList.remove('active')
+      })
     }
   }
   return (
-    <header className='header'>
-      <div>
-        <nav className='navigation'>
-          <div className='first-section-nav'>
-            <img id='logo' src={Logo} alt="" />
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
-          </div>
-          <div>
-            <button className='schedule'>{scheduleButton}</button>
-          </div>
-        </nav>
-        <h1>Post when your audience is most active</h1>
-        <p className='description'>With TImeNow, automatically schedule your posts on Twitter, Linkedin and instagram to post when your followers are most active</p>
-        <div className='button_demo'>
-          <button>{scheduleButton}</button>
-          <button>{demo}</button>
-        </div>
-        <p className='data_info'>Time now does not sell your data. <a href="#learn">Learn more</a></p>
+    <nav className='navigation'>
+      <div className="nav_left">
+        <div><img src={Logo} alt="brand_logo" /></div>
+        <ul className='list_item'>
+          <a href="#features"><li>Features</li></a>
+          <a href="#pricing"><li>Pricing</li></a>
+        </ul>
       </div>
-      <div className='hero_section'>
-        <img src={Mockup} alt="hero_image" />
+      <div className="nav_right">
+        <button className='schedule'>
+          Start Scheduling
+        </button>
       </div>
-
-    </header>
+    </nav>
   )
 }
 
