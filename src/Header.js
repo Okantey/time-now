@@ -23,7 +23,7 @@ const Header = () => {
     }
   }
   return (
-    <nav className='navigation'>
+    <nav className='navigation' >
       <div className="nav_left">
         <div><img src={Logo} alt="brand_logo" /></div>
         <ul className='list_item'>
