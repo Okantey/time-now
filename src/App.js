@@ -1,26 +1,29 @@
 import './App.css';
 
 
+
 function App() {
+  const names = ["Aba", "Esther", "Michelle", "Jerry", "Nelson"]
+
   return (
+
     <div className="App">
-      <User name="Gideon Nunoo" age={55} salary={2000} />
-      <User name="Bernard Appiedu" age={65} salary={4000} />
-      <User name="Elizabeth Dick" age={25} salary={2000} />
-      <User name="Randy Mensah" age={13} salary={6000} />
-      <User name="Daniel Jerry" age={52} salary={2000} />
+      <Job salary={2000} position="General Manager" company="IBM" />
+      <Job salary={2000} position="Human Resource Manager" company="Apple" />
+      <Job salary={2000} position="IT Officer" company="Google" />
     </div>
   );
 }
 
-const User = (props) => {
+const Job = (props) => {
   return (
-    <div className='gridLayout'>
-      <h1> {props.name}</h1>
-      <h1> {props.age}</h1>
-      <h1> {props.salary}</h1>
+    <div className="wrapper">
+      <h1 className="intro">{props.salary}</h1>
+      <h1 className="intro">{props.position}</h1>
+      <h1 className="intro">{props.company}</h1>
     </div>
   )
 }
+
 
 export default App;
